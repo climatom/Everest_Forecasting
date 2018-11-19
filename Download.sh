@@ -15,8 +15,7 @@ nhrs=$4
 # Define textfile with names | lat | lon | elevation
 fin="${outdir}Locations.txt"
 
-# Remove all GFS_grb/nc files (in target directory) before starting
-find /${outdir} -type f -name '_GFS_*.nc' -delete
+# Remove all _GFS_grb files (in target directory) before starting
 find /${outdir} -type f -name '_GFS_*.grb' -delete
 
 # Loop over all forecast hours
@@ -36,16 +35,6 @@ var_UGRD=on&var_VGRD=on&var_TMP=on&var_HGT=on&subregion=&leftlon=85&rightlon=89&
 	# add a sleep to prevent a denial of service in case of missing file
 	sleep 1
 
-	# ****Uncomment below (between "------") if you need wgrib2 conversion
-
-	#-----------------------------------------#
-	#if [ -f "${outdir}_GFS_{$hr}.nc" ]; then
-	#	rm "${outdir}_GFS_${hr}.nc"
-	#fi
-	#wgrib2 _GFS_${hr}.grb -netcdf _GFS_${hr}.nc > /dev/null 2>&1
-	#-----------------------------------------#
-
-
 	
 	echo "Downloaded forecast hour: ${ii}"
 done
@@ -55,17 +44,13 @@ if [ -f "${outdir}Forecast_GFS2D.nc" ]; then
 	rm "${outdir}Forecast_GFS2D.nc"
 fi
 
-# ****Replace command [1] with [2] if you used wgrib2 conversion
 #---------------------------------------------------------------------#
-# Command [1]
+# Command
 cmd="cdo -s -f nc mergetime ${outdir}_GFS_*.grb ${outdir}Forecast_GFS2D.nc"
-# Command [2]
-# cmd="cdo -s mergetime ${outdir}_GFS_*.nc ${outdir}Forecast_GFS2D.nc"
-#---------------------------------------------------------------------#
 ${cmd} # execute merge command! 
+#---------------------------------------------------------------------#
 
 # Remove any lingering files
-find /${outdir} -type f -name '_GFS_*.nc' -delete
 find /${outdir} -type f -name '_GFS_*.grb' -delete
 
 ## Begin processing 

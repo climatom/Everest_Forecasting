@@ -1,0 +1,47 @@
+------
+README
+------
+
+Overview
+........
+
+The code in this repository downloads 0.25 degree GFS data corresponding to 
+the most recent model run.
+
+The forecasts are extracted for a small domain in the vicinty of Everest, 
+and are then interpolated horizontally and vertically to the coordinates
+of places named in the "Locations.txt" file. 
+
+To run
+....... 
+
+Save all code to the same directory, cd there and execute:
+
+python MAIN.py <dir> <hours>
+
+where:
+
+<dir> | string: is the full path of the folder where the Download.sh
+and Process.py are saved (and where all the output files 
+will be stored)
+
+
+<hours> | integer: is the number of hours you want a forecast for (e.g. 24)
+
+
+Dependencies
+............
+> CDO (Climate Data Operators): https://code.mpimet.mpg.de/projects/cdo/
+The following Python modules: 
+> os; sys; pandas; numpy; matplotlib; datetime; netCDF4; scipy
+
+*Note*: If Python is installed through Anaconda (https://www.anaconda.com/download/)
+then most of these modules will already be installed already. Those that are not
+(perhaps just pandas, and netCDF4) can be installed using conda (e.g. "conda install 
+pandas" at the command prompt would install pandas) 
+
+*Note*: Code will "clean" up after itself by deleting all "_GFS_*.nc" files in the 
+running directory: check that this won't delete anything important before running!!
+
+-------
+Contact: t.matthews@lboro.ac.uk
