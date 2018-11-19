@@ -39,7 +39,7 @@ The following Python modules:
 > os; sys; pandas; numpy; matplotlib; datetime; netCDF4; scipy
 
 *Note*: If Python is installed through Anaconda (https://www.anaconda.com/download/)
-then most of these modules will already be installed already. Those that are not
+then most of these modules will already be installed. Those that are not
 (perhaps just pandas, and netCDF4) can be installed using conda (e.g. "conda install 
 pandas" at the command prompt would install pandas) 
 
