@@ -28,6 +28,9 @@ will be stored)
 
 <hours> | integer: is the number of hours you want a forecast for (e.g. 24)
 
+Output: plot (.png) of temperature and wind speed for each forecast location. 
+
+
 
 Dependencies
 ............
