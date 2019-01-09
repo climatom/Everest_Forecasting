@@ -70,10 +70,7 @@ fig.set_size_inches(9,5)
 fig.savefig("%s%s.png"%(outdir,name),dpi=300)
 ax.set_title(name)
 print("Forecast processed: See '%s.png' in %s"%(name,outdir))
+# Update git
+os.system("bash %sUpdateGit.sh"%outdir)
 
-# Update GitHub
-cd /home/lunet/gytm3/Everest2019/Forecasting && /usr/bin/git commit -a -m "6-hourly Update... `date`"
-
-# Send data to Git server
-cd /home/lunet/gytm3/Everest2019/Forecasting && /usr/bin/git push https://climatom:G3j18Rbp@github.com/climatom/Everest_Forecasting.git
 
