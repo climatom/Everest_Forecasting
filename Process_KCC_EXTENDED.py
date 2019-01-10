@@ -12,7 +12,7 @@ import GeneralFunctions as GF
 gmail_user = 'lboroweather@gmail.com'  
 gmail_password = '83w9bWtU'
 to=["climatom86@gmail.com","t.matthews@lboro.ac.uk","perrylb@appstate.edu","atait@ngs.org",\
-"selvin@ngs.org"]
+"selvin@ngs.org","mariusz.potocki@maine.edu"]
 #======================================================#
 #======================================================#
 # Functions
