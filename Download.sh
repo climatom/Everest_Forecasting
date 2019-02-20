@@ -30,7 +30,7 @@ lev_550_mb=on&lev_600_mb=on&lev_650_mb=on&lev_700_mb=on&lev_750_mb=on&lev_800_mb
 var_UGRD=on&var_VGRD=on&var_TMP=on&var_HGT=on&subregion=&leftlon=85&rightlon=89&toplat=30&bottomlat=26&dir=%2Fgfs.${date}"
 
 	# download file
-	curl "$URL" -o ${outdir}_GFS_${hr}.grb #> /dev/null 2>&1
+	curl "$URL" -L -o ${outdir}_GFS_${hr}.grb #> /dev/null 2>&1
 
 	# add a sleep to prevent a denial of service in case of missing file
 	sleep 1
