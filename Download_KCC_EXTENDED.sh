@@ -27,12 +27,14 @@ for ((ii=1; ii<=$nhrs; ii++)); do
 
 
 	# Define surface url (for precip)
-	URL="http://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_0p25.pl?file=gfs.t${init_hour}z.pgrb2.0p25.f${hr}\
+	URL="https://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_0p25.pl?file=gfs.t${init_hour}z.pgrb2.0p25.f${hr}\
 &lev_surface=on&var_PRATE=on&var_HGT=on&subregion=&leftlon=85&rightlon=89&toplat=30&bottomlat=26&dir=%2Fgfs.${date}"
+echo $URL
 
 	# Define pressure-level url (for temp and wind)
-	URL2="http://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_0p25.pl?file=gfs.t${init_hour}\
+	URL2="https://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_0p25.pl?file=gfs.t${init_hour}\
 z.pgrb2.0p25.f${hr}&lev_500_mb=on&lev_550_mb=on&lev_600_mb=on&lev_650_mb=on&lev_700_mb=on&var_HGT=on&var_TMP=on&var_UGRD=on&var_VGRD=on&var_RH=on&subregion=&leftlon=85&rightlon=89&toplat=30&bottomlat=26&dir=%2Fgfs.${date}"
+echo $URL2
 
 	# Download surface file
 	curl "$URL" -o ${outdir}_GFS_surface${hr}.grb #> /dev/null 2>&1

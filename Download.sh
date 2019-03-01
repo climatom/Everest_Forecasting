@@ -24,7 +24,7 @@ for ((ii=1; ii<=$nhrs; ii++)); do
 	hr=$(printf "%03d" $ii)
 
 	# Define url
-	URL="http://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_0p25.pl?file=gfs.t${init_hour}\
+	URL="https://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_0p25.pl?file=gfs.t${init_hour}\
 z.pgrb2.0p25.f${hr}&lev_300_mb=on&lev_350_mb=on&lev_400_mb=on&lev_450_mb=on&lev_500_mb=on&\
 lev_550_mb=on&lev_600_mb=on&lev_650_mb=on&lev_700_mb=on&lev_750_mb=on&lev_800_mb=on&lev_850_mb=on&lev_900_mb=on&\
 var_UGRD=on&var_VGRD=on&var_TMP=on&var_HGT=on&subregion=&leftlon=85&rightlon=89&toplat=30&bottomlat=26&dir=%2Fgfs.${date}"
