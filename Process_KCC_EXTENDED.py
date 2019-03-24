@@ -119,9 +119,9 @@ for ii in range(np.sum(idx)):
 msg="%s%s%s%s%s" % (string[0],string[1],string[2],string[3],string[4])
 
 # Adjust e-mail list depending on date...
-critical=datetime.datetime(year=2019,month=1,day=13,hour=1)
-if today>critical:
-	to.append("881632722161@msg.iridium.com")
+#critical=datetime.datetime(year=2019,month=1,day=13,hour=1)
+#if today>critical:
+#	to.append("881632722161@msg.iridium.com")
      
 # Send message (long-range)
 send_mail(msg,to)
